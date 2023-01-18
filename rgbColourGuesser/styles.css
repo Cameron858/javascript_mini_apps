@@ -1,0 +1,12 @@
+
+.block {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 10%;
+    border: 3px solid black;
+}
+
+.row {
+    display: flex;
+}

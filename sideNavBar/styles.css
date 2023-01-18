@@ -1,0 +1,50 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #072646;
+}
+
+.nav-icon {
+    height: 3rem;
+    width: 3rem;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+
+    background-color: slategray;
+    border-radius: 50%;
+
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+
+    /* Adds duration to transition when mouse is moved off */    
+    transition-duration: 350ms;
+
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    color: #072646;
+    background-color: white;
+    border-radius: 15%;
+    transition-duration: 350ms;
+}
+
+.selected {
+    color: #072646;
+    font-size: x-large;
+    background-color: white;
+    border-radius: 15%;
+}
