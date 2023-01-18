@@ -1,4 +1,17 @@
+const numberOfEyes = 10
+const topOffset = 5
+const sideOffset = 5
+
+spawnEyes()
 document.addEventListener("mousemove", oneMouseMove)
+
+function spawnEyes() {
+    
+    for (let i = 0; i < numberOfEyes; i++) {
+        var eye = createEye(i)
+        document.body.appendChild(eye)
+    }
+}
 
 function oneMouseMove(event) {
 
@@ -34,6 +47,14 @@ function createEye(eyeID) {
     eye.id = `eye-${eyeID}`
     eye.src = "eye.png"
     eye.className = "eye"
+
+    eye.style.position = "absolute"
+    eye.style.left = `${getRandomPosition(sideOffset)}%`
+    eye.style.top = `${getRandomPosition(topOffset)}%`
     
     return eye
+}
+
+function getRandomPosition(offset) {
+    return Math.floor(Math.random() * 50)
 }
