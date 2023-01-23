@@ -1,5 +1,10 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --blog-post-gap-size: 3rem;
+    --blog-post-line-height: calc(var(--blog-post-gap-size) * 2)
 }
 
 body {
@@ -9,7 +14,6 @@ body {
 }
 
 .col {
-    border: 1px solid black;
     height: 100%;
     width: 75%;
     margin: auto;
@@ -20,7 +24,6 @@ body {
 .row {
     display: flex;
     justify-content: center;
-    border: 1px solid rgb(255, 0, 0);
 }
 
 #input {
@@ -44,8 +47,9 @@ body {
 .blog-post {
     display: block;
     height: 5rem;
-    width: 80%;
-    border-radius: 1rem;
+    width: 75%;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
     background-color: lightblue;
     text-align: center;
     margin: auto;
@@ -54,9 +58,11 @@ body {
 .blog-post:not(:first-child)::before {
     content: "";
     position: absolute;
-    height: var(--blog-post-gap-size);
+    height: var(--blog-post-line-height);
     width: 0.25rem;
-    transform: translateY(calc(-1 * var(--blog-post-gap-size)));
+    transform: translateY(calc(-1 * var(--blog-post-line-height)));
     left: 50%;
-    background-color:lightslategray;
+    z-index: -1;
+    background-color:rgb(189, 197, 204);
+
 }
