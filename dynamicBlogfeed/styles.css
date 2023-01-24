@@ -11,6 +11,7 @@ body {
     height: 100vh;
     width: 100%;
     margin: 0 auto;
+    background-color: lightcoral;
 }
 
 .col {
@@ -48,21 +49,20 @@ body {
     display: block;
     height: 5rem;
     width: 75%;
-    border: 1px solid grey;
     border-radius: 0.5rem;
-    background-color: lightblue;
+    background-color:lightcyan;
     text-align: center;
     margin: auto;
+    box-shadow: 1px 2px 2px;
 }
 
 .blog-post:not(:first-child)::before {
     content: "";
     position: absolute;
     height: var(--blog-post-line-height);
-    width: 0.25rem;
+    width: 0.125rem;
     transform: translateY(calc(-1 * var(--blog-post-line-height)));
     left: 50%;
     z-index: -1;
-    background-color:rgb(189, 197, 204);
-
+    background-color:rgb(106, 110, 114);
 }
