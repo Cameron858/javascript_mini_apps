@@ -3,24 +3,21 @@ const topOffset = 5
 const sideOffset = 5
 
 spawnEyes()
-document.addEventListener("mousemove", oneMouseMove)
+document.addEventListener("mousemove", onMouseMove)
 
 function spawnEyes() {
-    
+
     for (let i = 0; i < numberOfEyes; i++) {
         var eye = createEye(i)
         document.body.appendChild(eye)
     }
 }
 
-function oneMouseMove(event) {
-
-    /// 215, 915
-    /// 680, 915
+function onMouseMove(event) {
 
     const xOffset = 93
     const yOffset = 62
-    
+
     var mouseX = event.clientX
     var mouseY = event.clientY
 
@@ -30,10 +27,10 @@ function oneMouseMove(event) {
 
         var eyeX = Math.round(offset.x) + xOffset
         var eyeY = Math.round(offset.y) + yOffset
-    
+
         var dx = eyeX - mouseX
         var dy = eyeY - mouseY
-        
+
         var angleRads = Math.atan2(dy, dx);
         var angleDegs = (angleRads * 180) / Math.PI
 
@@ -51,7 +48,7 @@ function createEye(eyeID) {
     eye.style.position = "absolute"
     eye.style.left = `${getRandomPosition(sideOffset)}%`
     eye.style.top = `${getRandomPosition(topOffset)}%`
-    
+
     return eye
 }
 
