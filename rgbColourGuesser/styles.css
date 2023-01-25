@@ -1,3 +1,11 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
 
 .block {
     height: 100px;
@@ -5,8 +13,14 @@
     margin: 10px;
     border-radius: 10%;
     border: 3px solid black;
+    transition: 300ms ease-in-out;
 }
 
 .row {
     display: flex;
+    justify-content: center;
+}
+
+#colour-to-guess {
+    text-align: center;
 }

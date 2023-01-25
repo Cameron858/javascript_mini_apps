@@ -1,16 +1,20 @@
-createGameBoard()
-var selectedBlockIndex = pickRandomBlock();
-var selectedBlock = document.getElementById(
-    `block-${selectedBlockIndex["row"]}-${selectedBlockIndex["column"]}`
-)
-document.getElementById("colour-to-guess").innerHTML = selectedBlock.style.backgroundColor
+init()
+
+function init() {
+    createGameBoard()
+    var selectedBlockIndex = pickRandomBlock();
+    var selectedBlock = document.getElementById(
+        `block-${selectedBlockIndex["row"]}-${selectedBlockIndex["column"]}`
+    )
+    document.getElementById("colour-to-guess").innerHTML = selectedBlock.style.backgroundColor
+}
 
 
 function createGameBoard() {
     let gameBoard = document.getElementById("game-board")
 
     for (let rowNumber = 0; rowNumber < 3; rowNumber++) {
-        
+
         // create row element
         var row = document.createElement("div")
         row.id = `row-${rowNumber}`
@@ -24,7 +28,7 @@ function createGameBoard() {
 
             block.style.backgroundColor = randomRGBColour()
             block.addEventListener("click", checkCorrectBlock)
-            
+
             row.appendChild(block)
         }
 
@@ -44,7 +48,6 @@ function randomRGBColour() {
 function pickRandomBlock() {
     var row = Math.floor(Math.random() * 3)
     var column = Math.floor(Math.random() * 3)
-
     return {
         row: row,
         column: column
@@ -58,7 +61,15 @@ function checkCorrectBlock(event) {
 
     if (block.style.backgroundColor === correctRGB) {
         alert("You win!")
+        resetGame()
     } else {
         alert("Wrong block!")
+        block.style.opacity = "25%"
     }
+}
+
+function resetGame() {
+    let gameBoard = document.getElementById("game-board")
+    gameBoard.innerHTML = ""
+    init()
 }
